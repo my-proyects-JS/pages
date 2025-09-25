@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniero de Sistemas Senior - Autor & Consultor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .profile-summary {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        h3 {
+            color: #3498db;
+            font-size: 1.4rem;
+            margin: 15px 0 10px;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+        }
+        
+        .company {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 5px 0;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background-color: #eef5ff;
+            color: #2c3e50;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #d6e4ff;
+        }
+        
+        .project-highlight {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2980b9;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        /* Estilos para la sección del libro - VERSIÓN MEJORADA */
+        .book-section {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            padding: 40px;
+            border-left: 5px solid #e74c3c;
+            text-align: center;
+        }
+        
+        .book-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .book-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .book-subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .book-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            margin: 30px 0;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            border-left: 4px solid #3498db;
+        }
+        
+        .book-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .book-teaser {
+            background-color: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            font-style: italic;
+            border: 1px dashed #f39c12;
+        }
+        
+        .book-cta {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .book-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .mystery-element {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .book-section {
+                padding: 25px 20px;
+            }
+            
+            .book-quote {
+                font-size: 1.2rem;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+      <header>
+            <h1>Jehimmi A. Saavedra</h1>
+            <div class="subtitle">Ingeniero de Sistemas Senior | Especialista en Análisis de Requerimientos | Autor | Consultor</div>
+            <div class="profile-summary">
+                Más de 17 años de experiencia en <strong>análisis de requerimientos</strong>, 
+                transformación digital y liderazgo de proyectos tecnológicos de alto impacto.
+            </div>
+        </header>
+                            
+            <!-- Sección Libro -->
+        <section class="book-section">
+            <div class="book-badge">PRÓXIMAMENTE</div>
+
+	
+   	   <div class="book-Portad"> <img src="C:\Users\jjehi\Downloads\portada.png" alt="Portada del libro Excelencia en Análisis de Requerimientos: La IA como aliada" style="max-width:300px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2);"></div>
+   		 <p>
+            
+            <div class="book-quote">
+                “Escuchar mal a un usuario cuesta minutos; corregir ese error puede costar millones.”
+            </div>
+            <div class="book-teaser">
+                ¿Sabías que el <strong>70% de los proyectos de software fallan</strong> no por problemas técnicos, 
+                sino por deficiencias en la comunicación y comprensión de requisitos?
+            </div>
+            <p>Un libro pensado para quienes desean marcar la diferencia en su rol: 
+            <strong>analistas</strong> que buscan elevar la calidad de su trabajo, 
+            <strong>profesionales de TI</strong> que quieren comprender mejor el valor de los requerimientos, 
+            e incluso <strong>líderes de proyectos</strong> que reconocen la importancia de cimentar el éxito desde la base.</p>
+            <a href="#" class="book-cta">Quiero enterarme del lanzamiento</a>
+        </section>
+
+       
+        
+        <section id="experience">
+            <h2>Experiencia Profesional Destacada</h2>
+            
+            <div class="experience-item">
+                <h3>Analista de Requerimientos Senior</h3>
+                <div class="company">Linktic (Fábrica de software, outsourcing de servicios y procesos IT)</div>
+                <div class="date">Marzo 2023 - Enero 2025 | Bogotá D.C.</div>
+                <div class="project-highlight">
+                    <strong>Proyecto:</strong> SGDEA de la EAAB, Empresa de acueducto y alcantarillado de Bogotá
+                </div>
+                <ul>
+                    <li>Identificación de necesidades, definición de alcances y análisis de información</li>
+                    <li>Diseño de diagramas de procesos (As-is, To-Be, To-Do)</li>
+                    <li>Documentación de historias de usuario y especificación de documentación funcional</li>
+                    <li>Análisis de datos para diseño de tableros de control</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Ingeniero de Requerimientos</h3>
+                <div class="company">SEGURITECH (Especialistas en integraciones tecnológicas)</div>
+                <div class="date">Septiembre 2021 - Octubre 2022 | Bogotá D.C.</div>
+                <div class="project-highlight">
+                    <strong>Proyecto:</strong> INVIAS - VIITS, Proyecto vías inteligentes 
+                    <em>(Premio al mejor proyecto latinoamericano de sistemas de transporte inteligente - Intertraffic Award Latin América 2021)</em>
+                </div>
+                <ul>
+                    <li>Análisis y levantamiento de información para uno de los despliegues tecnológicos más grandes de América Latina</li>
+                    <li>Diseño de diagramas de procesos y documentación de historias de usuario</li>
+                    <li>Especificación de documentación funcional y análisis de datos para Business Intelligence</li>
+                    <li>Pruebas funcionales e integrales, elaboración de manuales y capacitaciones</li>
+                </ul>
+            </div>
+            
+            <div class="highlight">
+                <strong>+11 años adicionales</strong> liderando equipos y proyectos de software en organizaciones como GRUPO ASD, 
+                participando en procesos electorales nacionales y desarrollando soluciones para entidades gubernamentales.
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>Conocimientos Técnicos</h2>
+            <div class="skills-container">
+                <span class="skill-tag">UML</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Oracle</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">SQL Server</span>
+                <span class="skill-tag">Jira</span>
+                <span class="skill-tag">Excel</span>
+                <span class="skill-tag">Word</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">SCRUM</span>
+                <span class="skill-tag">RUP</span>
+                <span class="skill-tag">CMMI</span>
+                <span class="skill-tag">BPMN</span>
+                <span class="skill-tag">Inteligencia Artificial</span>
+                <span class="skill-tag">Análisis y Gestión de Requerimientos</span>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Formación Académica</h2>
+            <h3>Ingeniería de Sistemas</h3>
+            <div class="company">Universidad El Bosque</div>
+            <div class="date">2004 | Bogotá D.C., Colombia</div>
+            
+            <h3>Cursos y Certificaciones Relevantes</h3>
+            <ul>
+                <li>Herramientas para los nuevos retos de la cuarta revolución industrial - Congreso Internacional Secretaría de la Función Pública (Agosto 2023)</li>
+                <li>Historias de usuario - Como escribir User Story (Agosto 2022)</li>
+                <li>Análisis y modelado de negocios con UML y BPMN (Agosto 2022)</li>
+                <li>Hands on CMMI-DEV v1.3, PROCESIX INC. (2013)</li>
+                <li>Aplicación de la metodología orientada a objetos utilizando el estándar UML, SENA (2009)</li>
+            </ul>
+        </section>
+
+	<section>
+            <h2>Contacto</h2>
+            <p>📧 jjehia@gmail.com</p>
+            <p>🔗 <a href=https://www.linkedin.com/in/jehimmi-andrea-saavedra-22b273200/ target="_blank">LinkedIn</a></p>
+        </section>
+        
+        <footer>
+            <p>Perfil Profesional - Ingeniero de Sistemas Senior & Autor</p>
+            <p>Transformando la teoría en resultados tangibles desde 2004</p>
+        </footer>
+    </div>
+
+    <script>
+        // Efecto simple para el botón de llamado a la acción
+        document.querySelector('.book-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés! El libro estará disponible próximamente. ¿Te gustaría recibir un aviso cuando se publique?');
+        });
+    </script>
+</body>
+</html>
