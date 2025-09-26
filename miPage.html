@@ -26,6 +26,30 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
+            position: relative;
+        }
+        
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .language-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #3498db;
+            color: #3498db;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .language-btn:hover {
+            background: #3498db;
+            color: white;
         }
         
         header {
@@ -226,6 +250,13 @@
             padding-top: 15px;
         }
         
+        .book-Portad img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
         @media (max-width: 768px) {
             header {
                 padding: 30px 20px;
@@ -247,87 +278,86 @@
                 font-size: 1.2rem;
                 padding: 20px;
             }
+            
+            .language-selector {
+                top: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-
-      <header>
-            <h1>Jehimmi A. Saavedra</h1>
-            <div class="subtitle">Ingeniero de Sistemas Senior | Especialista en Análisis de Requerimientos | Autor | Consultor</div>
-            <div class="profile-summary">
-                Más de 17 años de experiencia en <strong>análisis de requerimientos</strong>, 
-                transformación digital y liderazgo de proyectos tecnológicos de alto impacto.
+        <div class="language-selector">
+            <button class="language-btn" id="languageToggle">EN</button>
+        </div>
+        
+        <header>
+            <h1 id="name">Jehimmi A. Saavedra</h1>
+            <div class="subtitle" id="subtitle">Ingeniero de Sistemas Senior | Especialista en Análisis de Requerimientos | Autor | Consultor</div>
+            <div class="profile-summary" id="profile-summary">
+                Más de 17 años de experiencia en <strong>análisis de requerimientos</strong>, transformación digital y liderazgo de proyectos tecnológicos de alto impacto.
             </div>
         </header>
-                            
-            <!-- Sección Libro -->
-        <section class="book-section">
-            <div class="book-badge">PRÓXIMAMENTE</div>
 
-	
-   	   <div class="book-Portad"> <img src="https://raw.githubusercontent.com/my-proyects-JS/pages/main/Portada.png" alt="Portada del libro Excelencia en Análisis de Requerimientos: La IA como aliada" style="max-width:300px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2);"></div>
-   		 <p>
-            
-            <div class="book-quote">
-                “Escuchar mal a un usuario cuesta minutos; corregir ese error puede costar millones.”
+        <!-- Sección Libro -->
+        <section class="book-section">
+            <div class="book-badge" id="book-badge">PRÓXIMAMENTE</div>
+            <div class="book-Portad">
+                <img src="https://raw.githubusercontent.com/my-proyects-JS/pages/main/Portada.png" alt="Portada del libro Excelencia en Análisis de Requerimientos: La IA como aliada">
             </div>
-            <div class="book-teaser">
-                ¿Sabías que el <strong>70% de los proyectos de software fallan</strong> no por problemas técnicos, 
-                sino por deficiencias en la comunicación y comprensión de requisitos?
+            <div class="book-quote" id="book-quote">
+                "Escuchar mal a un usuario cuesta minutos; corregir ese error puede costar millones."
             </div>
-            <p>Un libro pensado para quienes desean marcar la diferencia en su rol: 
-            <strong>analistas</strong> que buscan elevar la calidad de su trabajo, 
-            <strong>profesionales de TI</strong> que quieren comprender mejor el valor de los requerimientos, 
-            e incluso <strong>líderes de proyectos</strong> que reconocen la importancia de cimentar el éxito desde la base.</p>
-            <a href="#" class="book-cta">Quiero enterarme del lanzamiento</a>
+            <div class="book-teaser" id="book-teaser">
+                ¿Sabías que el <strong>70% de los proyectos de software fallan</strong> no por problemas técnicos, sino por deficiencias en la comunicación y comprensión de requisitos?
+            </div>
+            <div class="book-content">
+                <p id="book-description">Un libro pensado para quienes desean marcar la diferencia en su rol: <strong>analistas</strong> que buscan elevar la calidad de su trabajo, <strong>profesionales de TI</strong> que quieren comprender mejor el valor de los requerimientos, e incluso <strong>líderes de proyectos</strong> que reconocen la importancia de cimentar el éxito desde la base.</p>
+                <a href="#" class="book-cta" id="book-cta">Quiero enterarme del lanzamiento</a>
+            </div>
         </section>
 
-       
-        
         <section id="experience">
-            <h2>Experiencia Profesional</h2>
+            <h2 id="experience-title">Experiencia Profesional</h2>
             
             <div class="experience-item">
-                <h3>Analista de Requerimientos Senior</h3>
+                <h3 id="job1-title">Analista de Requerimientos Senior</h3>
                 <div class="company">Linktic (Fábrica de software, outsourcing de servicios y procesos IT)</div>
-                <div class="date">Marzo 2023 - Enero 2025 | Bogotá D.C.</div>
+                <div class="date" id="job1-date">Marzo 2023 - Enero 2025 | Bogotá D.C.</div>
                 <div class="project-highlight">
-                    <strong>Proyecto:</strong> SGDEA de la EAAB, Empresa de acueducto y alcantarillado de Bogotá
+                    <strong id="project1-label">Proyecto:</strong> SGDEA de la EAAB, Empresa de acueducto y alcantarillado de Bogotá
                 </div>
                 <ul>
-                    <li>Identificación de necesidades, definición de alcances y análisis de información</li>
-                    <li>Diseño de diagramas de procesos (As-is, To-Be, To-Do)</li>
-                    <li>Documentación de historias de usuario y especificación de documentación funcional</li>
-                    <li>Análisis de datos para diseño de tableros de control</li>
+                    <li id="job1-task1">Identificación de necesidades, definición de alcances y análisis de información</li>
+                    <li id="job1-task2">Diseño de diagramas de procesos (As-is, To-Be, To-Do)</li>
+                    <li id="job1-task3">Documentación de historias de usuario y especificación de documentación funcional</li>
+                    <li id="job1-task4">Análisis de datos para diseño de tableros de control</li>
                 </ul>
             </div>
             
             <div class="experience-item">
-                <h3>Ingeniero de Requerimientos</h3>
+                <h3 id="job2-title">Ingeniero de Requerimientos</h3>
                 <div class="company">SEGURITECH (Especialistas en integraciones tecnológicas)</div>
-                <div class="date">Septiembre 2021 - Octubre 2022 | Bogotá D.C.</div>
+                <div class="date" id="job2-date">Septiembre 2021 - Octubre 2022 | Bogotá D.C.</div>
                 <div class="project-highlight">
-                    <strong>Proyecto:</strong> INVIAS - VIITS, Proyecto vías inteligentes 
-                    <em>(Premio al mejor proyecto latinoamericano de sistemas de transporte inteligente - Intertraffic Award Latin América 2021)</em>
+                    <strong id="project2-label">Proyecto:</strong> INVIAS - VIITS, Proyecto vías inteligentes <em>(Premio al mejor proyecto latinoamericano de sistemas de transporte inteligente - Intertraffic Award Latin América 2021)</em>
                 </div>
                 <ul>
-                    <li>Análisis y levantamiento de información para uno de los despliegues tecnológicos más grandes de América Latina</li>
-                    <li>Diseño de diagramas de procesos y documentación de historias de usuario</li>
-                    <li>Especificación de documentación funcional y análisis de datos para Business Intelligence</li>
-                    <li>Pruebas funcionales e integrales, elaboración de manuales y capacitaciones</li>
+                    <li id="job2-task1">Análisis y levantamiento de información para uno de los despliegues tecnológicos más grandes de América Latina</li>
+                    <li id="job2-task2">Diseño de diagramas de procesos y documentación de historias de usuario</li>
+                    <li id="job2-task3">Especificación de documentación funcional y análisis de datos para Business Intelligence</li>
+                    <li id="job2-task4">Pruebas funcionales e integrales, elaboración de manuales y capacitaciones</li>
                 </ul>
             </div>
             
             <div class="highlight">
-                <strong>+11 años adicionales</strong> liderando equipos y proyectos de software en organizaciones como GRUPO ASD, 
-                participando en procesos electorales nacionales y desarrollando soluciones para entidades gubernamentales.
+                <strong id="additional-exp">+11 años adicionales</strong> <span id="additional-exp-text">liderando equipos y proyectos de software en organizaciones como GRUPO ASD, participando en procesos electorales nacionales y desarrollando soluciones para entidades gubernamentales.</span>
             </div>
         </section>
-        
+
         <section id="skills">
-            <h2>Conocimientos Técnicos</h2>
+            <h2 id="skills-title">Conocimientos Técnicos</h2>
             <div class="skills-container">
                 <span class="skill-tag">UML</span>
                 <span class="skill-tag">SQL</span>
@@ -344,47 +374,174 @@
                 <span class="skill-tag">RUP</span>
                 <span class="skill-tag">CMMI</span>
                 <span class="skill-tag">BPMN</span>
-                <span class="skill-tag">Inteligencia Artificial</span>
-                <span class="skill-tag">Análisis y Gestión de Requerimientos</span>
+                <span class="skill-tag" id="ai-tag">Inteligencia Artificial</span>
+                <span class="skill-tag" id="req-tag">Análisis y Gestión de Requerimientos</span>
             </div>
         </section>
 
         <section id="education">
-            <h2>Formación Académica</h2>
-            <h3>Ingeniería de Sistemas</h3>
+            <h2 id="education-title">Formación Académica</h2>
+            <h3 id="degree-title">Ingeniería de Sistemas</h3>
             <div class="company">Universidad El Bosque</div>
-            <div class="date">2004 | Bogotá D.C., Colombia</div>
-            
-            <h3>Cursos y Certificaciones Relevantes</h3>
+            <div class="date" id="degree-date">2004 | Bogotá D.C., Colombia</div>
+            <h3 id="courses-title">Cursos y Certificaciones Relevantes</h3>
             <ul>
-                <li>Herramientas para los nuevos retos de la cuarta revolución industrial - Congreso Internacional Secretaría de la Función Pública (Agosto 2023)</li>
-                <li>Historias de usuario - Como escribir User Story (Agosto 2022)</li>
-                <li>Análisis y modelado de negocios con UML y BPMN (Agosto 2022)</li>
-                <li>Hands on CMMI-DEV v1.3, PROCESIX INC. (2013)</li>
-                <li>Aplicación de la metodología orientada a objetos utilizando el estándar UML, SENA (2009)</li>
+                <li id="course1">Herramientas para los nuevos retos de la cuarta revolución industrial - Congreso Internacional Secretaría de la Función Pública (Agosto 2023)</li>
+                <li id="course2">Historias de usuario - Como escribir User Story (Agosto 2022)</li>
+                <li id="course3">Análisis y modelado de negocios con UML y BPMN (Agosto 2022)</li>
+                <li id="course4">Hands on CMMI-DEV v1.3, PROCESIX INC. (2013)</li>
+                <li id="course5">Aplicación de la metodología orientada a objetos utilizando el estándar UML, SENA (2009)</li>
             </ul>
         </section>
 
-	<section>
-            <h2>Contacto</h2>
+        <section>
+            <h2 id="contact-title">Contacto</h2>
             <p>📧 jjehia@gmail.com</p>
-            <p>🔗 <a href=https://www.linkedin.com/in/jehimmi-andrea-saavedra-22b273200/ target="_blank">LinkedIn</a></p>
+            <p>🔗 <a href="https://www.linkedin.com/in/jehimmi-andrea-saavedra-22b273200/" target="_blank" id="linkedin-text">LinkedIn</a></p>
         </section>
-        
+
         <footer>
-            <p>Perfil Profesional - Ingeniero de Sistemas Senior & Autor</p>
-            <p>Transformando la teoría en resultados tangibles desde 2004</p>
+            <p id="footer-text1">Perfil Profesional - Ingeniero de Sistemas Senior & Autor</p>
+            <p id="footer-text2">Transformando la teoría en resultados tangibles desde 2004</p>
         </footer>
     </div>
 
     <script>
+        // Textos en español
+        const spanishTexts = {
+            name: "NOMBRE",
+            subtitle: "Ingeniero de Sistemas Senior | Especialista en Análisis de Requerimientos | Autor | Consultor",
+            "profile-summary": "Más de 17 años de experiencia en <strong>análisis de requerimientos</strong>, transformación digital y liderazgo de proyectos tecnológicos de alto impacto.",
+            "book-badge": "PRÓXIMAMENTE",
+            "book-quote": "“Escuchar mal a un usuario cuesta minutos; corregir ese error puede costar millones.”",
+            "book-teaser": "¿Sabías que el <strong>70% de los proyectos de software fallan</strong> no por problemas técnicos, sino por deficiencias en la comunicación y comprensión de requisitos?",
+            "book-description": "Un libro pensado para quienes desean marcar la diferencia en su rol: <strong>analistas</strong> que buscan elevar la calidad de su trabajo, <strong>profesionales de TI</strong> que quieren comprender mejor el valor de los requerimientos, e incluso <strong>líderes de proyectos</strong> que reconocen la importancia de cimentar el éxito desde la base.",
+            "book-cta": "Quiero enterarme del lanzamiento",
+            "experience-title": "Experiencia Profesional",
+            "job1-title": "Analista de Requerimientos Senior",
+            "job1-date": "Marzo 2023 - Enero 2025 | Bogotá D.C.",
+            "project1-label": "Proyecto:",
+            "job1-task1": "Identificación de necesidades, definición de alcances y análisis de información",
+            "job1-task2": "Diseño de diagramas de procesos (As-is, To-Be, To-Do)",
+            "job1-task3": "Documentación de historias de usuario y especificación de documentación funcional",
+            "job1-task4": "Análisis de datos para diseño de tableros de control",
+            "job2-title": "Ingeniero de Requerimientos",
+            "job2-date": "Septiembre 2021 - Octubre 2022 | Bogotá D.C.",
+            "project2-label": "Proyecto:",
+            "job2-task1": "Análisis y levantamiento de información para uno de los despliegues tecnológicos más grandes de América Latina",
+            "job2-task2": "Diseño de diagramas de procesos y documentación de historias de usuario",
+            "job2-task3": "Especificación de documentación funcional y análisis de datos para Business Intelligence",
+            "job2-task4": "Pruebas funcionales e integrales, elaboración de manuales y capacitaciones",
+            "additional-exp": "+11 años adicionales",
+            "additional-exp-text": "liderando equipos y proyectos de software en organizaciones como GRUPO ASD, participando en procesos electorales nacionales y desarrollando soluciones para entidades gubernamentales.",
+            "skills-title": "Conocimientos Técnicos",
+            "ai-tag": "Inteligencia Artificial",
+            "req-tag": "Análisis y Gestión de Requerimientos",
+            "education-title": "Formación Académica",
+            "degree-title": "Ingeniería de Sistemas",
+            "degree-date": "2004 | Bogotá D.C., Colombia",
+            "courses-title": "Cursos y Certificaciones Relevantes",
+            "course1": "Herramientas para los nuevos retos de la cuarta revolución industrial - Congreso Internacional Secretaría de la Función Pública (Agosto 2023)",
+            "course2": "Historias de usuario - Como escribir User Story (Agosto 2022)",
+            "course3": "Análisis y modelado de negocios con UML y BPMN (Agosto 2022)",
+            "course4": "Hands on CMMI-DEV v1.3, PROCESIX INC. (2013)",
+            "course5": "Aplicación de la metodología orientada a objetos utilizando el estándar UML, SENA (2009)",
+            "contact-title": "Contacto",
+            "linkedin-text": "LinkedIn",
+            "footer-text1": "Perfil Profesional - Ingeniero de Sistemas Senior & Autor",
+            "footer-text2": "Transformando la teoría en resultados tangibles desde 2004"
+        };
+
+        // Textos en inglés
+        const englishTexts = {
+            name: "NAME",
+            subtitle: "Senior Systems Engineer | Requirements Analysis Specialist | Author | Consultant",
+            "profile-summary": "Over 17 years of experience in <strong>requirements analysis</strong>, digital transformation, and leadership of high-impact technology projects.",
+            "book-badge": "COMING SOON",
+            "book-quote": "“Misunderstanding a user costs minutes; fixing that error can cost millions.”",
+            "book-teaser": "Did you know that <strong>70% of software projects fail</strong> not due to technical problems, but due to deficiencies in communication and requirements understanding?",
+            "book-description": "A book designed for those who want to make a difference in their role: <strong>analysts</strong> seeking to improve their work quality, <strong>IT professionals</strong> wanting to better understand the value of requirements, and even <strong>project leaders</strong> who recognize the importance of building success from the foundation.",
+            "book-cta": "Notify me about the launch",
+            "experience-title": "Professional Experience",
+            "job1-title": "Senior Requirements Analyst",
+            "job1-date": "March 2023 - January 2025 | Bogotá D.C.",
+            "project1-label": "Project:",
+            "job1-task1": "Identification of needs, scope definition and information analysis",
+            "job1-task2": "Design of process diagrams (As-is, To-Be, To-Do)",
+            "job1-task3": "User story documentation and functional specification",
+            "job1-task4": "Data analysis for control panel design",
+            "job2-title": "Requirements Engineer",
+            "job2-date": "September 2021 - October 2022 | Bogotá D.C.",
+            "project2-label": "Project:",
+            "job2-task1": "Analysis and information gathering for one of the largest technological deployments in Latin America",
+            "job2-task2": "Process diagram design and user story documentation",
+            "job2-task3": "Functional documentation specification and Business Intelligence data analysis",
+            "job2-task4": "Functional and integration testing, manual development and training",
+            "additional-exp": "+11 additional years",
+            "additional-exp-text": "leading software teams and projects in organizations like GRUPO ASD, participating in national electoral processes and developing solutions for government entities.",
+            "skills-title": "Technical Knowledge",
+            "ai-tag": "Artificial Intelligence",
+            "req-tag": "Requirements Analysis and Management",
+            "education-title": "Academic Education",
+            "degree-title": "Systems Engineering",
+            "degree-date": "2004 | Bogotá D.C., Colombia",
+            "courses-title": "Relevant Courses and Certifications",
+            "course1": "Tools for the new challenges of the fourth industrial revolution - International Congress Secretariat of Public Function (August 2023)",
+            "course2": "User stories - How to write a User Story (August 2022)",
+            "course3": "Business analysis and modeling with UML and BPMN (August 2022)",
+            "course4": "Hands on CMMI-DEV v1.3, PROCESIX INC. (2013)",
+            "course5": "Application of object-oriented methodology using the UML standard, SENA (2009)",
+            "contact-title": "Contact",
+            "linkedin-text": "LinkedIn",
+            "footer-text1": "Professional Profile - Senior Systems Engineer & Author",
+            "footer-text2": "Transforming theory into tangible results since 2004"
+        };
+
+        let currentLanguage = 'es';
+        const languageToggle = document.getElementById('languageToggle');
+
+        // Función para cambiar el idioma
+        function toggleLanguage() {
+            const texts = currentLanguage === 'es' ? englishTexts : spanishTexts;
+            currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+            
+            // Actualizar todos los textos
+            for (const [key, value] of Object.entries(texts)) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.innerHTML = value;
+                }
+            }
+            
+            // Actualizar el botón de idioma
+            languageToggle.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
+            
+            // Actualizar el atributo lang del html
+            document.documentElement.lang = currentLanguage;
+        }
+
+        // Inicializar con español
+        document.addEventListener('DOMContentLoaded', function() {
+            // Asegurarse de que todos los textos estén en español al cargar
+            for (const [key, value] of Object.entries(spanishTexts)) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.innerHTML = value;
+                }
+            }
+            
+            // Configurar el evento del botón
+            languageToggle.addEventListener('click', toggleLanguage);
+        });
+
         // Efecto simple para el botón de llamado a la acción
         document.querySelector('.book-cta').addEventListener('click', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu interés! El libro estará disponible próximamente. ¿Te gustaría recibir un aviso cuando se publique?');
+            const message = currentLanguage === 'es' 
+                ? '¡Gracias por tu interés! El libro estará disponible próximamente. ¿Te gustaría recibir un aviso cuando se publique?'
+                : 'Thank you for your interest! The book will be available soon. Would you like to receive a notification when it is published?';
+            alert(message);
         });
     </script>
 </body>
-
 </html>
-
